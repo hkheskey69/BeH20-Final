@@ -37,4 +37,8 @@ struct UserProfile : Codable {
     
     var waterDrank : Int = 0
     
+    var waterPercentage : Double {
+        return Double(waterDrank)/Double(waterTarget)*100
+    }
+    
 }

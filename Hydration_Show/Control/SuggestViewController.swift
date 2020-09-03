@@ -11,8 +11,6 @@ import UIKit
 class SuggestViewController: UIViewController {
     
     var userProfile = UserProfile(gender: "", age: 0, height: 0.0, weight: 0.0, activity: "")
-
-    var watercalculator = WaterCalculator(w: 0,act: 0)
     var litreVal = ""
     
     @IBOutlet weak var litreLabel: UILabel!

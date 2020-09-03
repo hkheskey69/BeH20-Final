@@ -43,7 +43,7 @@ class ShowViewController: UIViewController {
         userProfile = downloadData()!
         // Assign value from struct
         targetWater = userProfile.waterTarget
-        nowWaterPercent = userProfile.waterDrank * 100 / targetWater
+        nowWaterPercent = Int(userProfile.waterPercentage)
         percentLabel.text = String(nowWaterPercent) + "%"
         gender = userProfile.gender
         if gender == "Male" {
@@ -87,7 +87,7 @@ class ShowViewController: UIViewController {
     // Func to update Percentage label when button (logo) was clicked
     @IBAction func confirmBtn(_ sender: UIButton) {
         userProfile.waterDrank += Int(sliderBar.value)
-        nowWaterPercent = userProfile.waterDrank * 100 / targetWater
+        nowWaterPercent = Int(userProfile.waterPercentage)
         updateIcon()
         percentLabel.text = String(nowWaterPercent) + "%"
         confirmDrinking.append(Int(sliderBar.value))
@@ -147,7 +147,7 @@ class ShowViewController: UIViewController {
         } else {
             if let lastInput = confirmDrinking.last {
                 userProfile.waterDrank -= lastInput
-                nowWaterPercent = userProfile.waterDrank * 100 / targetWater
+                nowWaterPercent = Int(userProfile.waterPercentage)
                 updateIcon()
                 percentLabel.text = String(nowWaterPercent) + "%"
                 confirmDrinking.removeLast()

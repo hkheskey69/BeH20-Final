@@ -13,7 +13,7 @@
 		2D551E0A24FE47B00022AC89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D551E0824FE47B00022AC89 /* Main.storyboard */; };
 		2D551E0C24FE47B20022AC89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D551E0B24FE47B20022AC89 /* Assets.xcassets */; };
 		2D551E0F24FE47B20022AC89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D551E0D24FE47B20022AC89 /* LaunchScreen.storyboard */; };
-		2D551E1724FF56D80022AC89 /* WaterBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D551E1624FF56D80022AC89 /* WaterBrain.swift */; };
+		2D551E1724FF56D80022AC89 /* AppBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D551E1624FF56D80022AC89 /* AppBrain.swift */; };
 		2D551E1924FF56F20022AC89 /* SuggestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D551E1824FF56F20022AC89 /* SuggestViewController.swift */; };
 		2D551E1B24FF57770022AC89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D551E1A24FF57760022AC89 /* ProfileViewController.swift */; };
 		2D551E1D24FF57910022AC89 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D551E1C24FF57910022AC89 /* UserProfile.swift */; };
@@ -31,7 +31,7 @@
 		2D551E0B24FE47B20022AC89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D551E0E24FE47B20022AC89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D551E1024FE47B20022AC89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D551E1624FF56D80022AC89 /* WaterBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterBrain.swift; sourceTree = "<group>"; };
+		2D551E1624FF56D80022AC89 /* AppBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBrain.swift; sourceTree = "<group>"; };
 		2D551E1824FF56F20022AC89 /* SuggestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestViewController.swift; sourceTree = "<group>"; };
 		2D551E1A24FF57760022AC89 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2D551E1C24FF57910022AC89 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		2D551E1E24FF60010022AC89 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2D551E1624FF56D80022AC89 /* WaterBrain.swift */,
+				2D551E1624FF56D80022AC89 /* AppBrain.swift */,
 				2D551E1C24FF57910022AC89 /* UserProfile.swift */,
 			);
 			path = Model;
@@ -190,7 +190,7 @@
 				2D551E0724FE47B00022AC89 /* ShowViewController.swift in Sources */,
 				2D551E1D24FF57910022AC89 /* UserProfile.swift in Sources */,
 				2D551E0324FE47B00022AC89 /* AppDelegate.swift in Sources */,
-				2D551E1724FF56D80022AC89 /* WaterBrain.swift in Sources */,
+				2D551E1724FF56D80022AC89 /* AppBrain.swift in Sources */,
 				2D551E1924FF56F20022AC89 /* SuggestViewController.swift in Sources */,
 				2D551E0524FE47B00022AC89 /* SceneDelegate.swift in Sources */,
 			);

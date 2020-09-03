@@ -12,12 +12,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // JASON - GET A FLAG IF USER IS LAUNCHING THE FIRST TIME
 
-    
     var optionallyStoreTheFirstLaunchFlag = false
     let isFirstLaunch = UserDefaults.isFirstLaunch()
+    let defaults = UserDefaults.standard
+    var appBrain = AppBrain()
+    var dateOfTerminate : String = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+        
+        //print("dateOfTerminate : \(dateOfTerminate)")   //DEBUG
+        appBrain.checkDate()
 
         optionallyStoreTheFirstLaunchFlag = UserDefaults.isFirstLaunch()
         // Override point for customization after application launch.
@@ -36,6 +40,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        
+        let df = DateFormatter()
+        df.timeZone = .current
+        df.dateFormat = "yyyy-MM-dd"
+        dateOfTerminate = df.string(from: Date())
+        
+        self.defaults.set(self.dateOfTerminate, forKey: "DateOfTerminate")
+        //print ("dateOfTerminate is Saved : \(dateOfTerminate)") //DEBUG
     }
 
 

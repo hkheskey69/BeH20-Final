@@ -55,7 +55,7 @@ class ShowViewController: UIViewController,UNUserNotificationCenterDelegate {
         }
         super.viewDidLoad()
     
-        for y in scheduledNotiHour {
+        for y in scheduledNotiHour {                   //Scheduling Notification
             print("\(y) notification is scheduled.")
             notification(hour:y,minutes:00)
         }
@@ -172,8 +172,10 @@ class ShowViewController: UIViewController,UNUserNotificationCenterDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toProfile" {
             let destinationVC = segue.destination as! ProfileViewController
+            destinationVC.userProfile = userProfile
         }
     }
+    
     
     // JASON - FUNCTION FOR UPDATING LOCAL DATA
     func updateData(_ profile: UserProfile) {

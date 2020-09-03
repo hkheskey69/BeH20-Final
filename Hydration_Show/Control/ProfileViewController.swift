@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        showUserDefaultValue()
         // Do any additional setup after loading the view.
     }
 
@@ -107,6 +107,50 @@ class ProfileViewController: UIViewController {
         if let encoded = try? encoder.encode(profile) {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "UserProfile")
+        }
+    }
+    
+    func showUserDefaultValue() {
+        if userProfile.gender != "" {
+            //Set Default Value
+            if userProfile.gender == "Male" {
+                maleButton.isSelected = true
+                gender = "Male"
+            } else {
+                femaleButton.isSelected = true
+                gender = "Female"
+            }
+        }
+        ageTextField.text = String(userProfile.age)
+        heightTextField.text = String(userProfile.height)
+        weightTextField.text = String(userProfile.weight)
+        
+        switch userProfile.activity {
+            case "0" :
+                activityLevelZero.isSelected = true
+                activityLevelOne.isSelected = false
+                activityLevelTwo.isSelected = false
+                activityLevelThree.isSelected = false
+            case "1" :
+                activityLevelZero.isSelected = false
+                activityLevelOne.isSelected = true
+                activityLevelTwo.isSelected = false
+                activityLevelThree.isSelected = false
+            case "2" :
+                activityLevelZero.isSelected = false
+                activityLevelOne.isSelected = false
+                activityLevelTwo.isSelected = true
+                activityLevelThree.isSelected = false
+            case "3" :
+                activityLevelZero.isSelected = false
+                activityLevelOne.isSelected = false
+                activityLevelTwo.isSelected = false
+                activityLevelThree.isSelected = true
+            default:
+                activityLevelZero.isSelected = false
+                activityLevelOne.isSelected = false
+                activityLevelTwo.isSelected = false
+                activityLevelThree.isSelected = false
         }
     }
     

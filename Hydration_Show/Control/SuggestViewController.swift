@@ -16,15 +16,19 @@ class SuggestViewController: UIViewController {
     @IBOutlet weak var litreLabel: UILabel!
     @IBOutlet weak var customButton: UIButton!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var middleImageView: UIImageView!
+    @IBOutlet weak var confirmBtn: UIButton!
     
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor(red: CGFloat(46)/255.0, green: CGFloat(196)/255.0,blue: CGFloat(182)/255.0, alpha: 1.0)
         //Retrievedata
         //WaterCalculator(weight,activity)
         litreLabel.text = "\(userProfile.waterTarget) ml"
+        logoImageView.center = self.view.center
+        self.view.addSubview(logoImageView)
         
     }
 

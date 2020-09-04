@@ -20,6 +20,8 @@
 		2D551E2724FFA01A0022AC89 /* DrinkSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D551E2524FFA01A0022AC89 /* DrinkSound.mp3 */; };
 		2D551E2824FFA01A0022AC89 /* LVSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D551E2624FFA01A0022AC89 /* LVSound.mp3 */; };
 		2D551E2A24FFA42B0022AC89 /* StopSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D551E2924FFA42B0022AC89 /* StopSound.mp3 */; };
+		2D709B1E2500A569004393AD /* gilroy-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2D709B1C2500A568004393AD /* gilroy-light.otf */; };
+		2D709B1F2500A569004393AD /* gilroy-extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2D709B1D2500A568004393AD /* gilroy-extrabold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		2D551E2524FFA01A0022AC89 /* DrinkSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DrinkSound.mp3; sourceTree = "<group>"; };
 		2D551E2624FFA01A0022AC89 /* LVSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LVSound.mp3; sourceTree = "<group>"; };
 		2D551E2924FFA42B0022AC89 /* StopSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StopSound.mp3; sourceTree = "<group>"; };
+		2D709B1C2500A568004393AD /* gilroy-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-light.otf"; sourceTree = "<group>"; };
+		2D709B1D2500A568004393AD /* gilroy-extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-extrabold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 		2D551E0124FE47B00022AC89 /* Hydration_Show */ = {
 			isa = PBXGroup;
 			children = (
+				2D709B1D2500A568004393AD /* gilroy-extrabold.otf */,
+				2D709B1C2500A568004393AD /* gilroy-light.otf */,
 				2D551E0224FE47B00022AC89 /* AppDelegate.swift */,
 				2D551E0424FE47B00022AC89 /* SceneDelegate.swift */,
 				2D551E2524FFA01A0022AC89 /* DrinkSound.mp3 */,
@@ -173,7 +179,9 @@
 				2D551E0F24FE47B20022AC89 /* LaunchScreen.storyboard in Resources */,
 				2D551E2724FFA01A0022AC89 /* DrinkSound.mp3 in Resources */,
 				2D551E2824FFA01A0022AC89 /* LVSound.mp3 in Resources */,
+				2D709B1F2500A569004393AD /* gilroy-extrabold.otf in Resources */,
 				2D551E0C24FE47B20022AC89 /* Assets.xcassets in Resources */,
+				2D709B1E2500A569004393AD /* gilroy-light.otf in Resources */,
 				2D551E2A24FFA42B0022AC89 /* StopSound.mp3 in Resources */,
 				2D551E0A24FE47B00022AC89 /* Main.storyboard in Resources */,
 			);

@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ShowViewController: UIViewController {
+class ShowViewController: UIViewController,UNUserNotificationCenterDelegate {
     // Initialize all the UI Comonents
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var buttonS: UIButton!
@@ -33,7 +33,9 @@ class ShowViewController: UIViewController {
     var audioLVSound = URL(fileURLWithPath: Bundle.main.path(forResource: "LVSound", ofType: "mp3")!)
     var audioStopSound = URL(fileURLWithPath: Bundle.main.path(forResource: "StopSound", ofType: "mp3")!)
     var userProfile = UserProfile(gender: "", age: 0, height: 0.0, weight: 0.0, activity: "")
+    var scheduledNotiHour = [09,11,13,15,17,19,21]
     var defaults = UserDefaults.standard
+    
 
     // Initialize viewDidLoad function
     override func viewDidLoad() {
@@ -52,6 +54,12 @@ class ShowViewController: UIViewController {
             imageNameStr = "Female_000"
         }
         super.viewDidLoad()
+    
+        for y in scheduledNotiHour {
+            print("\(y) notification is scheduled.")
+            notification(hour:y,minutes:00)
+        }
+        
         updateIcon()
         print("\(userProfile.gender) : ShowViewController")
         print(audioDrinkSound)
@@ -185,6 +193,71 @@ class ShowViewController: UIViewController {
             }
         }
         return nil
+    }
+    
+    func notification(hour:Int, minutes: Int) {
+        let hourString = String(hour)
+        print("NOTIFICATION CALLED")
+        var dateComponents = DateComponents()
+        dateComponents.hour = hour
+        dateComponents.minute = minutes
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                self.registerCategory()
+                
+                self.scheduleNotification(event: "Drinking Reminder", time: dateComponents, hourString: hourString)
+                
+            }
+        }
+    }
+    
+    func registerCategory() -> Void{
+        
+        print("REGISTERCATEGORY CALLED")
+        let drink = UNNotificationAction(identifier: "drink", title: "Drink", options: [])
+        let clear = UNNotificationAction(identifier: "clear", title: "Clear", options: [])
+        let category : UNNotificationCategory = UNNotificationCategory.init(identifier: "CALLINNOTIFICATION", actions: [drink, clear], intentIdentifiers: [], options: [])
+        
+        let center = UNUserNotificationCenter.current()
+        center.setNotificationCategories([category])
+        
+    }
+    
+    func scheduleNotification (event : String, time: DateComponents, hourString:String) {
+        print("SCHEDULENOTIFICATION CALLED")
+        let content = UNMutableNotificationContent()
+        
+        content.title = event
+        content.body = "Time to drink."
+        content.categoryIdentifier = "CALLINNOTIFICATION"
+        let trigger = UNCalendarNotificationTrigger.init(dateMatching: time, repeats:true)
+        let identifier = "id_"+event+hourString
+        let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
+        
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: { (error) in
+        })
+        
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("didReceive")
+        switch response.actionIdentifier {
+        case "drink":
+            print("drink!")
+        default:
+            print("Ah!")
+        }
+        
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("willPresent")
+        completionHandler([.badge, .alert, .sound])
     }
 }
 
